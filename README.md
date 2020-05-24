@@ -1,7 +1,10 @@
 # amazon_advertising_cpc_api
 关于调用亚马逊api的方法的封装，版本==v2
+
 自己配置config.py中的信息，包括开发者信息，地区等信息
+
 获取授权
+
 1、获取授权url
 
 from auth import BaseAuth 
