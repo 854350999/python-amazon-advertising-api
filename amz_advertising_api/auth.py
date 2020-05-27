@@ -1,12 +1,12 @@
 import requests
-from config import client_id,client_secret,refresh_token,region,host_url_list,redirect_uri
+from config import client_id,client_secret,refresh_token,region,host_url_list,redirect_uri,token_url_list
 
 
 class BaseAuth:
     scope = 'cpc_advertising:campaign_management'
     response_type = 'code'
     host = host_url_list[region]
-    token_url = 'https://api.amazon.com/auth/o2/token'
+    token_url = token_url_list[region]
     headers = {
         'Content-Type': 'application/x-www-form-urlencoded;charset=UTF-8'
     }
