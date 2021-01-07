@@ -1,43 +1,54 @@
-## 关于调用亚马逊api的方法的封装，版本==v2
+## The basic package of Amazon advertising api call
 
-配置**config.py**中的信息，包括开发者信息，地区等信息
+## 1、Get authorization
 
-获取授权
-
-## 1、获取授权url
+In the first step, you need to get authorized uri based on your developer information
 
 ```python
-from auth import BaseAuth
-
-ba = BaseAuth()
-
-print(ba.get_grant_url())
+import adapi
+auth_api = adapi.Auth(client_id=client_id,
+                      client_secret=client_secret,
+                      redirect_uri=redirect_uri,
+                      region="NA")
+auth_uri = auth_api.get_grant_url()
 ```
 
-点进这个url后用自己的店铺登录后看到网址信息上有个**code=xxxx**,这个code就是我们所需要的
+Click on this url and log in with your own store, and you will see a code on the URL information, this code is what we need
 
-## 2、获取 access_token 和refresh_token
+## 2、Get access_token and refresh_token
+
+In the second step, you need to obtain **refresh_token** and **access_token** according to the **code** obtained in the previous step
 
 ```python
-print(ba.get_refresh_token(code))
+access_token, refresh_token = auth_api.get_refresh_token(code=code)
 ```
 
-通过该方法得到**access_token**和**refresh_token**，将这个**refresh_token**保存到自己的记事本中，可永久使用
+Get **access_token** and **refresh_token** through this method, save this **refresh_token** in your own notepad for permanent use
 
-**access_token**是有有效期的，如果要获得新的**access_token**可以直接
+**access_token** has a validity period, if you want to get a new **access_token**, you can directly
 
 ```python
-print(ba.get_new_access_token(refresh_token))
+access_token = auth_api.get_new_access_token(refresh_token=refresh_token)
 ```
 
-## 3、获取 profile
+## 3、Get profiles
 
-将上一步的**access_token**复制下来，通过该方法得到你的店铺的**profileId**
+In the third step, you need to obtain the **profile_id** of your store according to the **access_token** obtained in the previous step
 
 ```python
-from profiles import Profiles
+profile_api = adapi.Profiles(access_token=access_token, 
+                             region=region, 
+                             client_id=client_id)
+response = profile_api.get_profiles()
+```
 
-profile = Profiles(access_token)
-
-print(profile.get_profiles())
+## 4、For example
+if you want use report api
+```python
+report_api = adapi.sp_products.Reports(access_token=access_token,
+                                       profile_id=profile_id,
+                                       region=region,
+                                       client_id=client_id)
+response = report_api.create_report(record_type=record_type,
+                                    params=params)
 ```
