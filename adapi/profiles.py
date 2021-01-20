@@ -7,11 +7,11 @@ class Profiles(ProClient):
         self.uri_path = "/v2/profiles/register"
         self.data = params
         self.method = "put"
-        return self.make_call()
+        return self.execute()
 
     def get_profiles(self):
         self.uri_path = "/v2/profiles"
         self.method = "get"
-        return self.make_call()
+        return self.execute()
 
     

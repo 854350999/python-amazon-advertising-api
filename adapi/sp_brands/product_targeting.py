@@ -24,6 +24,7 @@ class ProductTargeting(Client):
         return self.execute()
 
     def get_targets_by_id(self, target_id):
+        self.method = "get"
         self.uri_path = "/sb/targets/{}".format(target_id)
         return self.execute()
 

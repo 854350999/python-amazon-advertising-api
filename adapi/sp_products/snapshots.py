@@ -12,6 +12,7 @@ class Snapshots(Client):
         return self.execute()
 
     def get_snapshots_status(self, snapshot_id):
+        self.method = "get"
         self.uri_path = "/v2/sp/snapshots/{}".format(snapshot_id)
         return self.execute()
 

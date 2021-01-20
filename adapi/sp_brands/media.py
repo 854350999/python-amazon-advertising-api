@@ -18,6 +18,7 @@ class Media(Client):
         return self.execute()
 
     def get_media_describe(self, media_id):
+        self.method = "get"
         self.uri_path = "/media/describe"
         self.headers["mediaId"] = media_id
         return self.execute()

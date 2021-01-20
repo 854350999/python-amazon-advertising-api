@@ -11,10 +11,11 @@ class Reports(Client):
         self.method = "post"
         return self.execute()
 
-    def get_report_status(self, report_id):
+    def get_report(self, report_id):
+        self.method = "get"
         self.uri_path = "/v2/reports/{}".format(report_id)
         return self.execute()
 
-    def get_report_location(self, report_id):
-        self.uri_path = "/v2/reports/{}/download".format(report_id)
-        return self.execute()
+    def get_report_download_url(self, location):
+        self.method = "get"
+        return self.execute_download(location)

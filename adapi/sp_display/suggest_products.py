@@ -6,6 +6,7 @@ from ..adapi import Client
 class SuggestProducts(Client):
 
     def get_suggest_products(self, params):
+        self.method = "get"
         self.uri_path = "/sd/suggestedProducts"
         self.data = params
         return self.execute()

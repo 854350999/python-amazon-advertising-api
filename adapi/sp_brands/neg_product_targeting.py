@@ -24,6 +24,7 @@ class NegProductTargeting(Client):
         return self.execute()
 
     def get_neg_targets_by_id(self, neg_target_id):
+        self.method = "get"
         self.uri_path = "/sb/negativeTargets/{}".format(neg_target_id)
         return self.execute()
 

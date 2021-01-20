@@ -18,15 +18,18 @@ class Campaigns(Client):
         return self.execute()
 
     def get_campaigns(self, params):
+        self.method = "get"
         self.uri_path = "/sb/campaigns"
         self.data = params
         return self.execute()
 
     def get_campaigns_by_id(self, campaign_id):
+        self.method = "get"
         self.uri_path = "/sb/campaigns/{}".format(campaign_id)
         return self.execute()
 
     def delete_campaigns_by_id(self, campaign_id):
+        self.method = "get"
         self.uri_path = "/sb/campaigns/{}".format(campaign_id)
         self.method = "delete"
         return self.execute()

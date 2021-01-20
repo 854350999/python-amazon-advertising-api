@@ -6,6 +6,7 @@ from ..adapi import Client
 class NegKeywords(Client):
 
     def get_neg_keywords(self, params):
+        self.method = "get"
         self.uri_path = "/sb/negativeKeywords"
         self.data = params
         return self.execute()
@@ -23,6 +24,7 @@ class NegKeywords(Client):
         return self.execute()
 
     def get_neg_keywords_by_id(self, keyword_id):
+        self.method = "get"
         self.uri_path = "/sb/negativeKeywords/{}".format(keyword_id)
         return self.execute()
 

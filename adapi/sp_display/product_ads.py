@@ -6,6 +6,7 @@ from ..adapi import Client
 class ProductAds(Client):
 
     def get_product_ads(self, params):
+        self.method = "get"
         self.uri_path = "/sd/productAds"
         self.data = params
         return self.execute()
@@ -23,6 +24,7 @@ class ProductAds(Client):
         return self.execute()
 
     def get_product_ads_by_id(self, ad_id):
+        self.method = "get"
         self.uri_path = "/sd/productAds/{}".format(ad_id)
         return self.execute()
 
@@ -32,11 +34,13 @@ class ProductAds(Client):
         return self.execute()
 
     def get_product_ads_extended(self, params):
+        self.method = "get"
         self.uri_path = "/sd/productAds/extended"
         self.data = params
         return self.execute()
 
     def get_product_ads_extended_by_id(self, ad_id):
+        self.method = "get"
         self.uri_path = "/sd/productAds/extended/{}".format(ad_id)
         return self.execute()
 

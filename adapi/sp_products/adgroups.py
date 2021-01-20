@@ -17,11 +17,13 @@ class AdGroup(Client):
         return self.execute()
 
     def get_ad_group(self, params):
+        self.method = "get"
         self.uri_path = "/v2/sp/adGroups"
         self.data = params
         return self.execute()
 
     def get_ad_group_by_id(self, ad_group_id):
+        self.method = "get"
         self.uri_path = "/v2/sp/adGroups/{}".format(ad_group_id)
         return self.execute()
 
@@ -31,11 +33,13 @@ class AdGroup(Client):
         return self.execute()
 
     def get_ad_group_extended(self, params):
+        self.method = "get"
         self.uri_path = "/v2/sp/adGroups/extended"
         self.data = params
         return self.execute()
 
     def get_ad_group_extended_by_id(self, ad_group_id):
+        self.method = "get"
         self.uri_path = "/v2/sp/adGroups/extended/{}".format(ad_group_id)
         return self.execute()
 

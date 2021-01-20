@@ -6,6 +6,7 @@ from ..adapi import Client
 class Targeting(Client):
 
     def get_targets(self, params):
+        self.method = "get"
         self.uri_path = "/sd/targets"
         self.data = params
         return self.execute()
@@ -23,6 +24,7 @@ class Targeting(Client):
         return self.execute()
 
     def get_targets_by_id(self, target_id):
+        self.method = "get"
         self.uri_path = "/sd/targets/{}".format(target_id)
         return self.execute()
 
@@ -32,11 +34,13 @@ class Targeting(Client):
         return self.execute()
 
     def get_targets_extended(self, params):
+        self.method = "get"
         self.uri_path = "/sd/targets/extended"
         self.data = params
         return self.execute()
 
     def get_targets_extended_by_id(self, target_id):
+        self.method = "get"
         self.uri_path = "/sd/targets/extended/{}".format(target_id)
         return self.execute()
 

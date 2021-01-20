@@ -6,6 +6,7 @@ from ..adapi import Client
 class Drafts(Client):
 
     def get_drafts_campaign(self, params):
+        self.method = "get"
         self.uri_path = "/sb/drafts/campaigns"
         self.data = params
         return self.execute()
@@ -23,6 +24,7 @@ class Drafts(Client):
         return self.execute()
 
     def get_drafts_campaign_by_id(self, draft_campaign_id):
+        self.method = "get"
         self.uri_path = "/sb/drafts/campaigns/{}".format(draft_campaign_id)
         return self.execute()
 

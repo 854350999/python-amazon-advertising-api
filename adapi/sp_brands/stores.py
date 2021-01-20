@@ -6,6 +6,7 @@ from ..adapi import Client
 class Stores(Client):
 
     def get_store_assets(self, params):
+        self.method = "get"
         self.uri_path = "/stores/assets"
         self.data = params
         return self.execute()
