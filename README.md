@@ -49,6 +49,6 @@ report_api = adapi.sp_products.Reports(access_token=access_token,
                                        profile_id=profile_id,
                                        region=region,
                                        client_id=client_id)
-response = report_api.create_report(record_type=record_type,
-                                    params=params)
+response = report_api.request_report(record_type=record_type,
+                                     params=params)
 ```
