@@ -21,7 +21,7 @@ import ad_api
 auth_api = ad_api.Auth(client_id="client_id",
                        client_secret="client_secret",
                        redirect_uri="redirect_uri",
-                       region="NA")
+                       region="region")
 auth_uri = auth_api.get_grant_url()
 ```
 
@@ -54,7 +54,7 @@ import ad_api
 auth_api = ad_api.Auth(client_id="client_id",
                        client_secret="client_secret",
                        redirect_uri="redirect_uri",
-                       region="NA")
+                       region="region")
 access_token = auth_api.get_new_access_token(refresh_token="refresh_token")
 ```
 
