@@ -5,7 +5,7 @@ import ad_api
 
 setup(
     name="python-amazon-advertising-api",
-    version="0.6.2",
+    version="0.6.3",
     install_requires=[
         "requests"
     ],
