@@ -1,10 +1,11 @@
 ## The basic package of Amazon advertising api call
 
-
 ---
 
 ### Installation
+
 [![Badge](https://img.shields.io/pypi/v/python-amazon-advertising-api?style=for-the-badge)](https://pypi.org/project/python-amazon-advertising-api/)
+
 ```
 pip install python-amazon-advertising-api
 ```
@@ -64,10 +65,11 @@ In the third step, you need to obtain the **profile_id** of your store according
 previous step
 
 ```python
-import ad_api
-profile_api = ad_api.Profiles(access_token="access_token",
-                              region="region",
-                              client_id="client_id")
+from ad_api.common import Profiles
+
+profile_api = Profiles(access_token="access_token",
+                       region="region",
+                       client_id="client_id")
 response = profile_api.get_profiles()
 ```
 
@@ -76,11 +78,11 @@ response = profile_api.get_profiles()
 if you want to use report api
 
 ```python
-import ad_api
-report_api = ad_api.sp_products.Reports(access_token="access_token",
-                                        profile_id="profile_id",
-                                        region="region",
-                                        client_id="client_id")
-response = report_api.request_report(record_type="record_type",
-                                     data={})
+from ad_api.sp_products import Campaigns
+
+campaign_api = Campaigns(access_token="access_token",
+                         profile_id="profile_id",
+                         region="region",
+                         client_id="client_id")
+response = campaign_api.get_campaigns(count=10)
 ```
