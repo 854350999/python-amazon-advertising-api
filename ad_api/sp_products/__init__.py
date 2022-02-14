@@ -7,5 +7,6 @@ from .negative_keywords import NegativeKeywords
 from .negative_product_targeting import NegativeProductTargeting
 from .product_ads import ProductAds
 from .product_targeting import ProductTargeting
+from .reports import Reports
 from .snapshots import Snapshots
 from .suggested_keywords import SuggestedKeywords
