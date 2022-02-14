@@ -10,7 +10,7 @@ setup(
         "requests"
     ],
     packages=find_packages(),
-    url="https://github.com/854350999/python-amazon-ad-api",
+    url="https://github.com/854350999/python-amazon-advertising-api",
     license="MIT",
     author="WT",
     author_email="854350999@qq.com",
