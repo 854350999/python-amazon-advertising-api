@@ -75,7 +75,7 @@ response = profile_api.get_profiles()
 
 ## 4、For example
 
-if you want to use report api
+if you want to use sponsored campaign api
 
 ```python
 from ad_api.sp_products import Campaigns
