@@ -1,4 +1,4 @@
-from .client import ProClient
+from ..client import ProClient
 
 
 class Profiles(ProClient):
