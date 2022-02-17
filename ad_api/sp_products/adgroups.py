@@ -1,7 +1,7 @@
 from ..client import Client
 
 
-class AdGroup(Client):
+class AdGroups(Client):
 
     def create_ad_group(self, params):
         self.uri_path = "/v2/sp/adGroups"

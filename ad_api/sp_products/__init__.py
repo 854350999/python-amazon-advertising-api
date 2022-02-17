@@ -1,4 +1,4 @@
-from .adgroups import AdGroup
+from .adgroups import AdGroups
 from .bidrecommendations import BidRecommendations
 from .campaigns import Campaigns
 from .campaign_negative_keywords import CampaignNegativeKeywords
