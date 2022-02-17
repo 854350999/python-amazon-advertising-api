@@ -1,11 +1,10 @@
 
 from setuptools import setup, find_packages
-import ad_api
 
 
 setup(
     name="python-amazon-advertising-api",
-    version="0.6.8",
+    version="0.6.9",
     install_requires=[
         "requests"
     ],
