@@ -7,7 +7,7 @@ class AdGroups(Client):
                       campaign_id_filter: str = None, ad_group_id_filter: str = None, name: str = None):
         self.uri_path = "/sd/adGroups"
         self.method = "get"
-        self.data = {
+        self.params = {
             "startIndex": start_index,
             "count": count,
             "stateFilter": state_filter,
@@ -44,7 +44,7 @@ class AdGroups(Client):
                               campaign_id_filter: str = None, ad_group_id_filter: str = None, name: str = None):
         self.uri_path = "/sd/adGroups/extended"
         self.method = "get"
-        self.data = {
+        self.params = {
             "startIndex": start_index,
             "count": count,
             "stateFilter": state_filter,
