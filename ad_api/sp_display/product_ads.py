@@ -7,7 +7,7 @@ class ProductAds(Client):
                         ad_id_filter: str = None, ad_group_id_filter: str = None, campaign_id_filter: str = None):
         self.uri_path = "/sd/productAds"
         self.method = "get"
-        self.data = {
+        self.params = {
             "startIndex": start_index,
             "count": count,
             "stateFilter": state_filter,
@@ -45,7 +45,7 @@ class ProductAds(Client):
                                  campaign_id_filter: str = None):
         self.uri_path = "/sd/productAds/extended"
         self.method = "get"
-        self.data = {
+        self.params = {
             "startIndex": start_index,
             "count": count,
             "stateFilter": state_filter,
