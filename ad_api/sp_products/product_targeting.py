@@ -1,5 +1,3 @@
-
-
 from ..client import Client
 
 
@@ -41,10 +39,19 @@ class ProductTargeting(Client):
         self.method = "delete"
         return self.execute()
 
-    def get_targets_extended(self, params):
+    def get_targets_extended(self, start_index: int = 0, count: int = None, state_filter: str = None,
+                             campaign_id_filter: str = None, ad_group_id_filter: str = None,
+                             target_id_filter: str = None):
         self.uri_path = "/v2/sp/targets/extended"
         self.method = "get"
-        self.data = params
+        self.params = {
+            "startIndex": start_index,
+            "count": count,
+            "stateFilter": state_filter,
+            "campaignIdFilter": campaign_id_filter,
+            "adGroupIdFilter": ad_group_id_filter,
+            "targetIdFilter": target_id_filter
+        }
         return self.execute()
 
     def get_targets_extended_by_id(self, target_id):
@@ -79,4 +86,3 @@ class ProductTargeting(Client):
         self.uri_path = "/v2/sp/targets/brands"
         self.data = params
         return self.execute()
-

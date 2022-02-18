@@ -4,7 +4,7 @@ from setuptools import setup, find_packages
 
 setup(
     name="python-amazon-advertising-api",
-    version="0.7.1",
+    version="0.7.2",
     install_requires=[
         "requests"
     ],
