@@ -1,5 +1,3 @@
-
-
 from ..client import Client
 
 
@@ -46,11 +44,17 @@ class ProductAds(Client):
         self.uri_path = "/v2/sp/productAds/extended/{}".format(ad_id)
         return self.execute()
 
-    def get_product_ads_extended(self, params):
+    def get_product_ads_extended(self, start_index: int = 0, count: int = None, state_filter: str = None,
+                                 campaign_id_filter: str = None, ad_group_id_filter: str = None,
+                                 ad_id_filter: str = None):
         self.method = "get"
         self.uri_path = "/v2/sp/productAds/extended"
-        self.data = params
+        self.params = {
+            "startIndex": start_index,
+            "count": count,
+            "stateFilter": state_filter,
+            "campaignIdFilter": campaign_id_filter,
+            "adGroupIdFilter": ad_group_id_filter,
+            "adIdFilter": ad_id_filter
+        }
         return self.execute()
-
-
-
