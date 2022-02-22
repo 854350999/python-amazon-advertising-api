@@ -1,5 +1,6 @@
 from .adgroups import AdGroups
 from .bidrecommendations import BidRecommendations
+from .budget_rules_recommendation import BudgetRulesRecommendation
 from .campaigns import Campaigns
 from .campaign_negative_keywords import CampaignNegativeKeywords
 from .keywords import Keywords
