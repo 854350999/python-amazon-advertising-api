@@ -3,16 +3,16 @@ from ..client import Client
 
 class AdGroups(Client):
 
-    def create_ad_group(self, params):
+    def create_ad_group(self, data):
         self.uri_path = "/v2/sp/adGroups"
         self.method = "post"
-        self.data = params
+        self.data = data
         return self.execute()
 
-    def update_ad_group(self, params):
+    def update_ad_group(self, data):
         self.uri_path = "/v2/sp/adGroups"
         self.method = "put"
-        self.data = params
+        self.data = data
         return self.execute()
 
     def get_ad_group(self, start_index: int = 0, count: int = None, campaign_type: str = None, state_filter: str = None,

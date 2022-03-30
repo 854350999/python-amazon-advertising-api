@@ -5,10 +5,10 @@ from ..client import Client
 
 class Snapshots(Client):
 
-    def request_snapshots(self, record_type, params):
+    def request_snapshots(self, record_type, data):
         self.uri_path = "/v2/sp/{}/snapshot".format(record_type)
         self.method = "post"
-        self.data = params
+        self.data = data
         return self.execute()
 
     def get_snapshots_status(self, snapshot_id):
