@@ -52,3 +52,22 @@ class Reports(Client):
         self.headers.pop("Content-Type")
         self.headers["Accept-encoding"] = "gzip"
         return self.execute()
+
+
+class Reporting(Client):
+
+    def create_reports(self, data):
+        self.method = "post"
+        self.uri_path = "/reporting/reports"
+        self.data = data
+        return self.execute()
+
+    def get_reports(self, report_id):
+        self.method = "get"
+        self.uri_path = "/reporting/reports/{}".format(report_id)
+        return self.execute()
+
+    def delete_reports(self, report_id):
+        self.method = "delete"
+        self.uri_path = "/reporting/reports/{}".format(report_id)
+        return self.execute()
