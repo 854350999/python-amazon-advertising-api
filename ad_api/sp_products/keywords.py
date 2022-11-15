@@ -65,3 +65,24 @@ class Keywords(Client):
         self.data = data
         self.method = "put"
         return self.execute()
+
+
+class KeywordsV3(Client):
+
+    def get_keywords_list(self, data):
+        self.method = "post"
+        self.uri_path = "/sp/keywords/list"
+        self.data = data
+        return self.execute()
+
+    def update_keywords(self, data):
+        self.method = "put"
+        self.uri_path = "/sp/keywords"
+        self.data = data
+        return self.execute()
+
+    def delete_keywords(self, data):
+        self.method = "post"
+        self.uri_path = "/sp/keywords/delete"
+        self.data = data
+        return self.execute()

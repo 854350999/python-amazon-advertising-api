@@ -86,3 +86,24 @@ class ProductTargeting(Client):
         self.uri_path = "/v2/sp/targets/brands"
         self.data = params
         return self.execute()
+
+
+class ProductTargetingV3(Client):
+
+    def get_targets_list(self, data):
+        self.method = "post"
+        self.uri_path = "/sp/targets/list"
+        self.data = data
+        return self.execute()
+
+    def update_targets(self, data):
+        self.method = "put"
+        self.uri_path = "/sp/targets"
+        self.data = data
+        return self.execute()
+
+    def delete_targets(self, data):
+        self.method = "post"
+        self.uri_path = "/sp/targets/delete"
+        self.data = data
+        return self.execute()

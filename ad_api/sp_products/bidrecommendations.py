@@ -25,3 +25,12 @@ class BidRecommendations(Client):
         self.method = "post"
         self.data = data
         return self.execute()
+
+
+class KeywordRecommendations(Client):
+
+    def get_keywords_recommendations(self, data):
+        self.method = "post"
+        self.uri_path = "/sp/targets/keywords/recommendations"
+        self.data = data
+        return self.execute()

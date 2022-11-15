@@ -58,3 +58,30 @@ class ProductAds(Client):
             "adIdFilter": ad_id_filter
         }
         return self.execute()
+
+
+class ProductAdsV3(Client):
+
+    def create_product_ads(self, data):
+        self.method = "post"
+        self.uri_path = "/sp/productAds"
+        self.data = data
+        return self.execute()
+
+    def get_product_ads_list(self, data):
+        self.method = "post"
+        self.uri_path = "/sp/productAds/list"
+        self.data = data
+        return self.execute()
+
+    def update_product_ads(self, data):
+        self.method = "put"
+        self.uri_path = "/sp/productAds"
+        self.data = data
+        return self.execute()
+
+    def delete_product_ads(self, data):
+        self.method = "post"
+        self.uri_path = "/sp/productAds/delete"
+        self.data = data
+        return self.execute()

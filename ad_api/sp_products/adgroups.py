@@ -60,3 +60,30 @@ class AdGroups(Client):
         self.method = "get"
         self.uri_path = "/v2/sp/adGroups/extended/{}".format(ad_group_id)
         return self.execute()
+
+
+class AdGroupsV3(Client):
+
+    def create_ad_groups(self, data):
+        self.method = "post"
+        self.uri_path = "/sp/adGroups"
+        self.data = data
+        return self.execute()
+
+    def get_ad_groups_list(self, data):
+        self.method = "post"
+        self.uri_path = "/sp/campaigns/list"
+        self.data = data
+        return self.execute()
+
+    def update_ad_groups(self, data):
+        self.method = "put"
+        self.uri_path = "/sp/adGroups"
+        self.data = data
+        return self.execute()
+
+    def delete_ad_groups(self, data):
+        self.method = "post"
+        self.uri_path = "/sp/adGroups/delete"
+        self.data = data
+        return self.execute()
