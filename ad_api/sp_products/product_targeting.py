@@ -107,3 +107,9 @@ class ProductTargetingV3(Client):
         self.uri_path = "/sp/targets/delete"
         self.data = data
         return self.execute()
+
+    def get_product_recommendations_targets(self, data):
+        self.uri_path = "/sp/targets/products/recommendations"
+        self.data = data
+        self.method = "post"
+        return self.execute()

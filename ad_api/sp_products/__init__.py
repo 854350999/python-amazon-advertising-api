@@ -5,7 +5,7 @@ from .budget_rules_recommendation import BudgetRulesRecommendation
 from .campaigns import Campaigns, CampaignsV3
 from .campaign_negative_keywords import CampaignNegativeKeywords
 from .keywords import Keywords, KeywordsV3
-from .negative_keywords import NegativeKeywords
+from .negative_keywords import NegativeKeywords, NegativeKeywordsV3
 from .negative_product_targeting import NegativeProductTargeting
 from .product_ads import ProductAds, ProductAdsV3
 from .product_targeting import ProductTargeting, ProductTargetingV3

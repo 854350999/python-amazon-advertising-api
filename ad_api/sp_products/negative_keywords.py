@@ -64,3 +64,30 @@ class NegativeKeywords(Client):
         self.method = "put"
         self.data = data
         return self.execute()
+
+
+class NegativeKeywordsV3(Client):
+
+    def delete_negative_keywords(self, data):
+        self.uri_path = "/sp/negativeKeywords/delete"
+        self.method = "post"
+        self.data = data
+        return self.execute()
+
+    def get_negative_keywords_list(self, data):
+        self.uri_path = "/sp/negativeKeywords/list"
+        self.method = "post"
+        self.data = data
+        return self.execute()
+
+    def create_negative_keywords(self, data):
+        self.uri_path = "/sp/negativeKeywords"
+        self.method = "post"
+        self.data = data
+        return self.execute()
+
+    def update_negative_keywords(self, data):
+        self.uri_path = "/sp/negativeKeywords"
+        self.method = "put"
+        self.data = data
+        return self.execute()
