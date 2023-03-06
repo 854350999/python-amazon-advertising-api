@@ -1,7 +1,8 @@
-from .adgroups import AdGroups
+from .adgroups import AdGroups, AdGroupsV4
+from .ads import Ads
 from .bid_recommendations import BidRecommendations
 from .brands import Brands
-from .campaigns import Campaigns
+from .campaigns import Campaigns, CampaignsV4
 from .drafts import Drafts
 from .keyword_recommendations import KeywordRecommendations
 from .keywords import Keywords

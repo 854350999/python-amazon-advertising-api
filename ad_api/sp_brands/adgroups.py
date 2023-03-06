@@ -47,3 +47,29 @@ class AdGroups(Client):
         self.method = "get"
         return self.execute()
 
+
+class AdGroupsV4(Client):
+
+    def delete_ad_groups(self, data):
+        self.method = "post"
+        self.uri_path = "/sb/v4/adGroups/delete"
+        self.data = data
+        return self.execute()
+
+    def create_ad_groups(self, data):
+        self.method = "post"
+        self.uri_path = "/sb/v4/adGroups"
+        self.data = data
+        return self.execute()
+
+    def update_ad_groups(self, data):
+        self.method = "put"
+        self.uri_path = "/sb/v4/adGroups"
+        self.data = data
+        return self.execute()
+
+    def get_ad_groups_list(self, data):
+        self.method = "post"
+        self.uri_path = "/sb/v4/adGroups"
+        self.data = data
+        return self.execute()

@@ -44,3 +44,28 @@ class Campaigns(Client):
         self.method = "delete"
         return self.execute()
 
+
+class CampaignsV4(Client):
+    def delete_campaigns(self, data):
+        self.method = "post"
+        self.uri_path = "/sb/v4/campaigns/delete"
+        self.data = data
+        return self.execute()
+
+    def create_campaigns(self, data):
+        self.method = "post"
+        self.uri_path = "/sb/v4/campaigns"
+        self.data = data
+        return self.execute()
+
+    def update_campaigns(self, data):
+        self.method = "put"
+        self.uri_path = "/sb/v4/campaigns"
+        self.data = data
+        return self.execute()
+
+    def get_campaigns_list(self, data):
+        self.method = "post"
+        self.uri_path = "/sb/v4/campaigns/list"
+        self.data = data
+        return self.execute()
