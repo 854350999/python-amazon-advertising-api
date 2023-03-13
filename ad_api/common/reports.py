@@ -65,9 +65,11 @@ class Reporting(Client):
     def get_reports(self, report_id):
         self.method = "get"
         self.uri_path = "/reporting/reports/{}".format(report_id)
+        self.data = None
         return self.execute()
 
     def delete_reports(self, report_id):
         self.method = "delete"
         self.uri_path = "/reporting/reports/{}".format(report_id)
+        self.data = None
         return self.execute()
