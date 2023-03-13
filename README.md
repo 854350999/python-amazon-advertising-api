@@ -89,4 +89,4 @@ response = campaign_api.get_campaigns(count=10)
 
 ## 感谢Jetbrains的免费许可证的大力支持
 
-![Badge](https://resources.jetbrains.com/storage/products/company/brand/logos/jb_beam.svg?_gl=1*1m77n1x*_ga*MjE4MzIwODkxLjE2NjU2MjU4OTQ.*_ga_9J976DJZ68*MTY3ODY5OTM1NS4xNC4xLjE2Nzg2OTk2MTQuMC4wLjA.&_ga=2.114471047.1051785456.1678699356-218320891.1665625894)
+![JetBrains Logo (Main) logo](https://resources.jetbrains.com/storage/products/company/brand/logos/jb_beam.svg)
